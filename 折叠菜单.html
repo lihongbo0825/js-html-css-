@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Folding menu</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            ul,ol{
+                list-style:none;
+            }
+            a{
+                text-decoration:none;
+            }
+            #menu .main-menu{
+                background:dimgrey;
+                width:100px;
+
+            }
+            #menu  h3{
+                width:100px;
+                height:30px;
+                color:mediumslateblue;
+                text-align:center;
+                line-height:30px;
+            }
+            #menu .sub-menu li{
+                background:gray;
+                border-bottom:1px dashed ;
+                width:100px;
+                height:30px;
+                text-indent:5px;
+            }
+            #menu .sub-menu a{
+                display:block;
+                color:hotpink;
+                text-align:center;
+                line-height:30px;
+            }
+            #menu .sub-menu{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+      <ul id="menu">
+          <li class="main-menu">
+              <h3>link 1</h3>
+              <ul class="sub-menu">
+                  <li><a href="#">sublink 1</a></li>
+                  <li><a href="#">sublink 2</a></li>
+                  <li><a href="#">sublink 3</a></li>
+              </ul>
+          </li>
+          <li class="main-menu">
+              <h3>link 2</h3>
+              <ul class="sub-menu">
+                  <li><a href="#">sublink 1</a></li>
+                  <li><a href="#">sublink 2</a></li>
+                  <li><a href="#">sublink 3</a></li>
+              </ul>
+          </li>
+      </ul>
+    <script>
+        var oUl = document.getElementById("menu");
+        var aLi = oUl.getElementsByTagName("li");
+        for(var i=0;i<aLi.length;i++){
+            if(aLi.className == "main-menu"){}
+               aLi[i].onclick = function(){
+                var oSubMenu = this.getElementsByTagName("ul")[0];
+                oSubMenu.style.display = "block";
+            }
+            aLi[i].onclick = function(){
+                var oSubMenu = this.getElementsByTagName("ul")[0];
+               if(oSubMenu.style.display == "block"){
+                   oSubMenu.style.display = "none";
+               }else{
+                   oSubMenu.style.display = "block";
+               }
+            }
+
+        }
+    </script>
+    </body>
+</html>
