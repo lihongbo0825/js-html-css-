@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Folding menu</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            ul,ol{
+                list-style:none;
+            }
+            a{
+                text-decoration:none;
+            }
+            #menu .main-menu{
+                background-color: dimgrey;
+                width:100px;
+            }
+            #menu h3{
+                color:palevioletred;
+                height:30px;
+                text-align:center;
+                line-height:30px;
+            }
+            #menu .sub-menu{
+                background-color: grey;
+                display:none;
+            }
+            #menu .sub-menu a{
+                display:block;
+                height:30px;
+                color:chocolate;
+                text-align:center;
+                line-height:30px;
+            }
+            #menu .sub-menu li{
+                border-bottom:1px dashed;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="menu">
+            <li class="main-menu">
+                <h3>link 1</h3>
+                <ul class="sub-menu">
+                    <li><a href="">sublink 1</a></li>
+                    <li><a href="">sublink 2</a></li>
+                    <li><a href="">sublink 3</a></li>
+                </ul>
+            </li>
+            <li class="main-menu">
+                <h3>link 2</h3>
+                <ul class="sub-menu">
+                    <li><a href="">sublink 1</a></li>
+                    <li><a href="">sublink 2</a></li>
+                    <li><a href="">sublink 3</a></li>
+                </ul>
+            </li>
+            <li class="main-menu">
+                <h3>link 3</h3>
+                <ul class="sub-menu">
+                    <li><a href="">sublink 1</a></li>
+                    <li><a href="">sublink 2</a></li>
+                    <li><a href="">sublink 3</a></li>
+                </ul>
+            </li>
+        </ul>
+    <script>
+        var oUl = document.getElementById("menu");
+        var aH3 = oUl.getElementsByTagName("h3");
+        for(var i=0;i<aH3.length;i++){
+             aH3[i].onclick = function() {
+                if(this.parentNode.children[1].style.display == "block"){
+                    this.parentNode.children[1].style.display = "none";
+                }else{
+                    this.parentNode.children[1].style.display ="block";
+                }
+            };
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+    </body>
+</html>
